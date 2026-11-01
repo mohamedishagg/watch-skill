@@ -19,6 +19,13 @@ The user gives a link; you run one command and then actually look at the result.
 
 Options: `--frames 36` for more frames, `--at <seconds…>` for exact full-size frames, `--no-transcript`, `--cookies chrome` (or safari/firefox/brave/edge).
 
+## If `watch` is not installed or fails
+
+Check before running it: `command -v watch` and `command -v ffmpeg`.
+- `watch` missing: tell the user to run `bash ~/watch-skill/install.sh` (from https://github.com/mohamedishagg/watch-skill), or run it for them if they agree.
+- `ffmpeg` missing: tell the user to install it first (macOS: `brew install ffmpeg`), then re-run the install.
+- `~/.local/bin` not on PATH: tell them to add it, or call `~/.claude/watch/watch` directly.
+
 ## Instagram
 
 Instagram often refuses logged-out downloads, even for public reels. If the command says it wants a login, ask the user to be signed in to Instagram in their browser and re-run with `--cookies chrome` (or whichever browser). Cookies are read locally by yt-dlp and never leave the Mac. Never ask the user for their Instagram password.
